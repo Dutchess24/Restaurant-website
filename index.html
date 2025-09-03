@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARESTAU</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+    <body>
+<header>
+    <h1>RESTAU</h1>
+    <nav id="navbar">
+<a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Our Services</a>
+    <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="overlay">
+    <h2>Are you starving and don't feel like going out? 
+        We’ve got you covered!</h2>
+    <h2>Wondering how you'll feed all those graduation guests? 
+        We’ve still got you covered!</h2>
+
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section id="menu">
+    <h2>OUR MENU:</h2>
+  <!-- Menu Icon -->
+  <div class="menu-icon" onclick="toggleMenu()">&#9776; Menu</div>
+
+  <!-- Categories (hidden by default) -->
+  <div id="menu-categories" class="hidden">
+
+    <!-- Starters -->
+    <h2>Starters & Appetizers</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/ceasar salad.jpg" alt="Caesar Salad">
+        <h4>Caesar Salad</h4>
+        <p>$6.50</p>
+      </div>
+      <div class="card">
+        <img src="images/garlic bread.jpg" alt="Garlic Bread">
+        <h4>Garlic Bread</h4>
+        <p>$4.00</p>
+      </div>
+      <div class="card">
+        <img src="images/mozarella sticks.jpg" alt="Mozarella Sticks">
+        <h4>Mozarella Sticks</h4>
+        <p>$5.50</p>
+      </div>
+      <div class="card">
+        <p id="soup">Loading soup of the day...</p>
+        <img id="soup-img" src="" alt="Soup of the Day">
+        <h4 id="soup-name"></h4>
+        <p>$5.00</p>
+      </div>
+    </div>
+
+    <!-- Main Course -->
+    <h2>Main Course</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/grilled chicken and veggies.jpeg" alt="Grilled Chicken">
+        <h4>Grilled Chicken & Veggies</h4>
+        <p>$12.00</p>
+      </div>
+      <div class="card">
+        <img src="images/spaghetti-bolognese.jpeg" alt="Spaghetti Bolognese">
+        <h4>Spaghetti Bolognese</h4>
+        <p>$11.00</p>
+      </div>
+      <div class="card">
+        <img src="images/beef burger with fries.jpg" alt="Beef Burger">
+        <h4>Beef Burger & Fries</h4>
+        <p>$10.00</p>
+      </div>
+      <div class="card">
+        <img src="images/veggie-pizza.jpg" alt="Veggie Pizza">
+        <h4>Vegetarian Pizza</h4>
+        <p>$9.50</p>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <h2>Desserts</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/chocolate lava-cake.jpg" alt="Chocolate Lava Cake">
+        <h4>Chocolate Lava Cake</h4>
+        <p>$6.00</p>
+      </div>
+      <div class="card">
+        <img src="images/fruit salad.jpg" alt="Fruit Salad">
+        <h4>Fruit Salad</h4>
+        <p>$5.50</p>
+      </div>
+      <div class="card">
+        <img src="images/Ice-Cream-Sundae.jpg" alt="Ice Cream Sundae">
+        <h4>Ice Cream Sundae</h4>
+        <p>$4.50</p>
+      </div>
+      <div class="card">
+        <img src="images/cheesecake.jpg" alt="Cheesecake">
+        <h4>Cheesecake</h4>
+        <p>$5.50</p>
+      </div>
+    </div>
+
+    <!-- Drinks -->
+    <h2>Drinks</h2>
+    <div class="card-container">
+      <div class="card"><img src="images/apple juice.jpeg"><h4>Apple Juice</h4><p>$3.00</p></div>
+      <div class="card"><img src="images/cappuchino.jpg"><h4>Cappuccino</h4><p>$3.50</p></div>
+      <div class="card"><img src="images/coffee.jpeg"><h4>Black Coffee</h4><p>$2.50</p></div>
+      <div class="card"><img src="images/fresh orange juice.jpeg"><h4>Orange Juice</h4><p>$3.00</p></div>
+      <div class="card"><img src="images/iced-tea.jpg"><h4>Iced Tea</h4><p>$2.80</p></div>
+      <div class="card"><img src="images/Mango-Juice.jpg"><h4>Mango Juice</h4><p>$3.20</p></div>
+      <div class="card"><img src="images/soft drinks.jpeg"><h4>Soft Drinks</h4><p>$2.00</p></div>
+    </div>
+
+    <!-- Kids Menu -->
+    <h2>Kids Menu</h2>
+    <div class="card-container">
+      <div class="card"><img src="images/mini burger and fries.jpeg"><h4>Mini Burger & Fries</h4><p>$6.00</p></div>
+      <div class="card"><img src="images/pancakes.jpg"><h4>Pancakes</h4><p>$4.50</p></div>
+      <div class="card"><img src="images/kids-mac-and-cheese.jpg"><h4>Mac & Cheese</h4><p>$5.00</p></div>
+      <div class="card"><img src="images/chicken-nuggets.jpg"><h4>Chicken Nuggets</h4><p>$5.50</p></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+    <h2>ABOUT US</h2>
+    <pre>RESTAU prides itself with offering only 
+        the BEST to our customers ranging from:
+            freshly made meals, 
+            top tier customer service and 
+            above all affordability</p>
+</section>
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="card-container">
+    <div class="card">
+      <h4>Freshly Made Meals</h4>
+      <p>Delicious meals prepared daily with fresh ingredients.</p>
+    </div>
+    <div class="card">
+      <h4>Quick Orders</h4>
+      <p>Grab your meal when you’re in a rush.</p>
+    </div>
+    <div class="card">
+      <h4>Catering</h4>
+      <p>We cater to events, parties, and corporate functions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+    <h2>HOW TO CONTACT US </h2>
+    <P>Reach us through the following means:</p>
+    <P>TEL: <a href="phone-number">+254712345678</a></p>
+    <P>EMAIL: <a href="email">restau.sevices@gmail.com</a></p>
+<form>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <input type="text" placeholder="Your Message">
+<button id="submit-button">SUBMIT</button>
+</form>
+</section>
+<script src="script.js"></script>
+
+    </body>
+    <footer>
+<p>&copy; 2025 RESTAU. All rights reserved.</p>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
+    </footer>
+</html>
