@@ -71,6 +71,8 @@ header h1 {
 section { 
   padding: 4rem 1rem; 
   text-align: center; 
+  scroll-margin-top: 90px;
+
 }
 
 /* Menu */
@@ -220,5 +222,6 @@ footer {
     align-items: center;
   }
 }
+
 
 
