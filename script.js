@@ -6,42 +6,54 @@ function toggleMenu() {
   categories.classList.toggle("hidden");
 }
 
-// Show dishes for category
-function showCategory(category) {
-  const menuItems = document.getElementById("menu-items");
-  menuItems.innerHTML = ""; // clear
-  menuData[category].forEach(item => {
-    menuItems.innerHTML += `
-      <div class="card">
-        <img src="${item.img}" alt="${item.name}">
-        <h4>${item.name}</h4>
-        <p>${item.price}</p>
-      </div>
-    `;
-  });
+// Cart array
+let cart = [];
+
+// Add item to cart
+function addToCart(name, price) {
+  cart.push({ name, price });
+  alert(`${name} added to cart!`);
 }
 
-   
-    const soups = [
-      { name: "Chicken Noodle Soup", img: "images/Chicken-Noodle-Soup.webp" }, 
-      { name: "Split Pea Soup", img: "images/split pea soup.jpeg" },
-      { name: "Cream of Mushroom", img: "images/Cream-of-Mushroom-Soup.jpg" },
-      { name: "Lobster Bisque", img: "images/lobster-bisque soup.jpg" },
-      { name: "Cream of Chicken", img: "images/cream of chicken soup.jpeg" },
-      { name: "Curry Corn Chowder", img: "images/curry corn chowder.jpeg" },
-      { name: "Gazpacho", img: "images/Gazpacho.jpg" }
-    ];
+// Update contact form message before submission
+const contactForm = document.querySelector('form');
+contactForm.addEventListener('submit', function(e) {
+  const cartMessage = cart.length > 0
+    ? "Order:\n" + cart.map(item => `- ${item.name} - $${item.price}`).join("\n")
+    : "No items selected.";
 
-    // Get today’s day number (0–6)
-    const today = new Date().getDay();
+  // Add cart to the message field
+  let messageField = contactForm.querySelector('input[placeholder="Your Message"]');
+  if (!messageField) {
+    // If you change input to textarea, use this instead:
+    messageField = contactForm.querySelector('textarea[name="message"]');
+  }
+  messageField.value = cartMessage;
+});
 
-    // Pick soup for today
-    const soupOfTheDay = soups[today];
+// Example for dynamically adding Add to Cart buttons
+// You can add this inside your showCategory() function or wherever you generate cards
+function createCard(item) {
+  return `
+    <div class="card">
+      <img src="${item.img}" alt="${item.name}">
+      <h4>${item.name}</h4>
+      <p>$${item.price}</p>
+      <button onclick="addToCart('${item.name}', ${item.price})">Add to Cart</button>
+    </div>
+  `;
+}
 
-    // Update text
-    document.getElementById("soup").textContent = "Soup of the Day: " + soupOfTheDay.name;
+// Example: Soup of the Day card with Add to Cart
+const soupCardContainer = document.getElementById("soup-card-container"); // create a container div for soup
+if (soupCardContainer) {
+  soupCardContainer.innerHTML = `
+    <div class="card">
+      <img src="${soupOfTheDay.img}" alt="${soupOfTheDay.name}">
+      <h4>${soupOfTheDay.name}</h4>
+      <p>$5.00</p>
+      <button onclick="addToCart('${soupOfTheDay.name}', 5)">Add to Cart</button>
+    </div>
+  `;
+}
 
-    // Update image
-    document.getElementById("soup-img").src = soupOfTheDay.img;
-    document.getElementById("soup-img").alt = soupOfTheDay.name;
- 
